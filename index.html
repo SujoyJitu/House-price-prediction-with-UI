@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Get a quick, personalized estimate of your home's value with Hearth, a simple home price estimator.">
+  <title>Hearth — Know what your home is worth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Hearth home"><span class="brand-mark">h</span><span>hearth<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#estimator">Home estimator</a></nav>
+    <a class="header-cta" href="#estimator">Get your estimate <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-icon">✳</span> YOUR HOME, UNDERSTOOD</div>
+        <h1 id="hero-title">Every home has<br>a <span>story.</span> Know its<br>worth.</h1>
+        <p class="hero-description">A clearer picture of your home’s value starts here. Tell us a little about your place and get a personalized estimate in seconds.</p>
+        <div class="hero-proof"><div class="avatar-stack" aria-hidden="true"><span>J</span><span>M</span><span>A</span><span>K</span></div><span>Helping homeowners feel at home<br>with their next move.</span></div>
+        <a href="#estimator" class="text-link">Find your home’s value <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a sunny modern home">
+        <div class="sun"></div><div class="art-note"><span class="note-sparkle">✳</span><span>Good things<br>grow at home.</span></div>
+        <svg class="house-illustration" viewBox="0 0 620 500" role="img" aria-label="A little home surrounded by trees and rolling hills">
+          <defs><linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#e9eee1"/><stop offset="1" stop-color="#dce8d4"/></linearGradient></defs>
+          <rect x="0" y="0" width="620" height="500" rx="16" fill="url(#sky)"/>
+          <circle cx="486" cy="91" r="43" fill="#f3c777"/>
+          <path d="M0 315Q113 239 235 294T468 270Q555 244 620 285V500H0Z" fill="#b9ca9d"/>
+          <path d="M0 373Q119 319 246 361T467 339Q553 320 620 353V500H0Z" fill="#93ae78"/>
+          <ellipse cx="315" cy="418" rx="186" ry="17" fill="#708860" opacity=".22"/>
+          <path d="M156 257 310 135l160 122v171H156Z" fill="#f7f4eb"/>
+          <path d="m136 262 172-139 178 139-18 22-160-126-155 125Z" fill="#42493f"/>
+          <path d="m185 244 123-97 139 106v-28L310 143 185 244Z" fill="#5b6453"/>
+          <rect x="214" y="281" width="66" height="147" rx="32" fill="#c9bda4"/>
+          <circle cx="266" cy="356" r="3" fill="#7d745f"/>
+          <rect x="331" y="281" width="95" height="81" fill="#abc0bd"/>
+          <path d="M378 281v81m-47-40h95" stroke="#f7f4eb" stroke-width="8"/>
+          <path d="M333 295h21m-21 13h21" stroke="#dce9e3" stroke-width="3" opacity=".85"/>
+          <path d="M352 428h-11v-21q0-9 11-9t11 9v21" fill="#9d9d7f"/>
+          <rect x="367" y="223" width="41" height="37" fill="#716e61"/>
+          <rect x="379" y="235" width="8" height="25" fill="#ddd3ba"/>
+          <path d="M80 406c17-27 43-24 54-3 19-11 37 5 39 21H68c0-9 4-15 12-18" fill="#667e58"/>
+          <path d="M87 404q13-31 29-32 16 1 21 33" fill="#718b60"/>
+          <path d="M513 377q13-31 29-32 16 1 21 33" fill="#718b60"/><path d="M505 380c17-25 42-22 53-3 19-10 36 5 37 21H494c0-9 4-15 11-18" fill="#667e58"/>
+          <circle cx="112" cy="352" r="4" fill="#f7f4eb" opacity=".8"/><circle cx="507" cy="222" r="5" fill="#f7f4eb" opacity=".7"/>
+        </svg>
+        <div class="art-caption"><span class="caption-dot"></span> A little more clarity, a lot more confidence.</div>
+        <div class="floating-value"><span class="floating-icon">↗</span><span class="floating-label">Your home could be worth</span><strong id="floating-price">$482,500</strong><span class="floating-trend">↑ &nbsp; 4.8% this year</span></div>
+      </div>
+    </section>
+
+    <section class="estimator-section" id="estimator" aria-labelledby="estimator-title">
+      <div class="section-heading"><span class="section-kicker">A GOOD PLACE TO START</span><h2 id="estimator-title">Let’s find your <span>number.</span></h2><p>A few details about your home make all the difference.</p></div>
+      <div class="estimator-card">
+        <form id="estimate-form">
+          <div class="form-topline"><div class="step-label"><span class="step-number">01</span><span>THE DETAILS</span></div><span class="step-caption">Just the basics. No guesswork.</span></div>
+          <div class="form-grid">
+            <label class="field field-wide"><span class="field-label">Where’s home?</span><span class="input-wrap"><span class="input-icon pin-icon" aria-hidden="true">⌖</span><input id="location" name="location" autocomplete="address-level2" placeholder="City or ZIP code" required minlength="2" maxlength="80"><span class="location-hint">We’ll use this to understand your local market.</span></span></label>
+            <label class="field"><span class="field-label">What kind of home?</span><span class="select-wrap"><select id="property-type" name="propertyType"><option value="single">Single-family home</option><option value="townhouse">Townhouse</option><option value="condo">Condo / apartment</option></select><span class="select-chevron">⌄</span></span></label>
+            <label class="field"><span class="field-label">How big is it?</span><span class="input-wrap"><input id="square-feet" name="squareFeet" type="number" min="300" max="25000" step="50" value="1850" required><span class="input-unit">sq ft</span></span></label>
+            <label class="field"><span class="field-label">Bedrooms</span><span class="select-wrap"><select id="bedrooms" name="bedrooms"><option value="1">1 bedroom</option><option value="2">2 bedrooms</option><option value="3" selected>3 bedrooms</option><option value="4">4 bedrooms</option><option value="5">5+ bedrooms</option></select><span class="select-chevron">⌄</span></span></label>
+            <label class="field"><span class="field-label">Bathrooms</span><span class="select-wrap"><select id="bathrooms" name="bathrooms"><option value="1">1 bathroom</option><option value="1.5">1.5 bathrooms</option><option value="2" selected>2 bathrooms</option><option value="2.5">2.5 bathrooms</option><option value="3">3 bathrooms</option><option value="4">4+ bathrooms</option></select><span class="select-chevron">⌄</span></span></label>
+          </div>
+          <div class="form-bottom"><p><span class="privacy-icon">◈</span> Your information stays private. Always.</p><button type="submit" class="submit-button">See my estimate <span aria-hidden="true">↗</span></button></div>
+        </form>
+        <aside class="result-panel" id="result-panel" aria-live="polite" aria-atomic="true">
+          <div class="result-decoration result-decoration-one"></div><div class="result-decoration result-decoration-two"></div>
+          <div class="result-top"><span class="result-badge"><span class="result-status-dot"></span> YOUR STARTING POINT</span><span class="result-arrow">↗</span></div>
+          <div class="result-welcome"><span class="welcome-icon">✳</span><h3>Your home has a<br>number. Let’s find it.</h3><p>Pop in a few details and get a<br>personalized estimate in seconds.</p></div>
+          <div class="result-content" hidden>
+            <span class="result-label">ESTIMATED HOME VALUE</span><div class="result-address" id="result-address"></div>
+            <div class="price-row"><span class="result-price" id="result-price">$482,500</span><span class="price-currency">USD</span></div>
+            <div class="range-track"><span class="range-marker"></span></div><div class="range-labels"><span id="range-low">$420,000</span><span id="range-high">$545,000</span></div>
+            <div class="result-footer"><span class="result-foot-dot"></span> Based on the details you shared</div>
+          </div>
+        </aside>
+      </div>
+      <p class="disclaimer">A helpful starting point, not an appraisal. Actual home values vary with condition, market data, and other factors.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works" aria-labelledby="how-title"><div class="how-heading"><span class="section-kicker">THOUGHTFUL BY DESIGN</span><h2 id="how-title">Good information.<br><span>Better decisions.</span></h2></div><div class="how-steps"><article class="how-step"><span class="how-number">01</span><div class="how-icon">⌖</div><h3>Start with your home</h3><p>Share a few details about where you live and what makes it yours.</p></article><article class="how-step"><span class="how-number">02</span><div class="how-icon">✳</div><h3>Get the bigger picture</h3><p>We shape your details into a useful estimate and a clearer starting point.</p></article><article class="how-step"><span class="how-number">03</span><div class="how-icon">↗</div><h3>Make your next move</h3><p>Take that extra confidence into whatever comes next, on your terms.</p></article></div></section>
+  </main>
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">h</span><span>hearth<span class="brand-dot">.</span></span></a><span class="footer-copy">A little clarity goes a long way.</span><span class="footer-copy">Made for the place you call home <span class="footer-heart">♥</span></span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
