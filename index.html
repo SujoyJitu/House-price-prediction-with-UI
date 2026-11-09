@@ -15,7 +15,7 @@
   <header class="topbar">
     <a class="brand" href="#home" aria-label="Hearth home"><span class="brand-mark">h</span><span>hearth<span class="brand-dot">.</span></span></a>
     <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#estimator">Home estimator</a></nav>
-    <a class="header-cta" href="#estimator">Get your estimate <span aria-hidden="true">↗</span></a>
+    <div class="account-links"><a class="login-link" href="login.html">Log in</a><a class="header-cta" href="signup.html">Sign up <span>?</span></a></div>
   </header>
 
   <main id="home">
@@ -63,9 +63,9 @@
         <form id="estimate-form">
           <div class="form-topline"><div class="step-label"><span class="step-number">01</span><span>THE DETAILS</span></div><span class="step-caption">Just the basics. No guesswork.</span></div>
           <div class="form-grid">
-            <label class="field field-wide"><span class="field-label">Where’s home?</span><span class="input-wrap"><span class="input-icon pin-icon" aria-hidden="true">⌖</span><input id="location" name="location" autocomplete="address-level2" placeholder="City or ZIP code" required minlength="2" maxlength="80"><span class="location-hint">We’ll use this to understand your local market.</span></span></label>
+            <label class="field field-wide"><span class="field-label">Where’s home?</span><span class="input-wrap"><span class="input-icon pin-icon" aria-hidden="true">⌖</span><input id="location" name="location" autocomplete="address-level2" placeholder="e.g. Downtown, Suburban, Rural" required minlength="2" maxlength="80"><span class="location-hint">Use a location from the dataset: Downtown, Suburban, or Rural.</span></span></label>
             <label class="field"><span class="field-label">What kind of home?</span><span class="select-wrap"><select id="property-type" name="propertyType"><option value="single">Single-family home</option><option value="townhouse">Townhouse</option><option value="condo">Condo / apartment</option></select><span class="select-chevron">⌄</span></span></label>
-            <label class="field"><span class="field-label">How big is it?</span><span class="input-wrap"><input id="square-feet" name="squareFeet" type="number" min="300" max="25000" step="50" value="1850" required><span class="input-unit">sq ft</span></span></label>
+            <label class="field"><span class="field-label">How big is it?</span><span class="input-wrap"><input id="square-feet" name="squareFeet" type="number" min="100" max="25000" step="50" value="1850" required><span class="input-unit">sq ft</span></span></label>
             <label class="field"><span class="field-label">Bedrooms</span><span class="select-wrap"><select id="bedrooms" name="bedrooms"><option value="1">1 bedroom</option><option value="2">2 bedrooms</option><option value="3" selected>3 bedrooms</option><option value="4">4 bedrooms</option><option value="5">5+ bedrooms</option></select><span class="select-chevron">⌄</span></span></label>
             <label class="field"><span class="field-label">Bathrooms</span><span class="select-wrap"><select id="bathrooms" name="bathrooms"><option value="1">1 bathroom</option><option value="1.5">1.5 bathrooms</option><option value="2" selected>2 bathrooms</option><option value="2.5">2.5 bathrooms</option><option value="3">3 bathrooms</option><option value="4">4+ bathrooms</option></select><span class="select-chevron">⌄</span></span></label>
           </div>
