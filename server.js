@@ -89,7 +89,12 @@ const server = http.createServer((req, res) => {
     if (token) sessions.delete(token); res.setHeader('Set-Cookie', 'hearth_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0'); return send(res, 200, { ok: true });
   }
   if (req.method === 'GET' && url.pathname === '/api/health') return send(res, 200, { status: 'ok', records: dataset.length });
-  if (req.method === 'GET' && url.pathname === '/api/dataset/summary') return send(res, 200, { records: dataset.length, fields: Object.keys(dataset[0] || {}), locations: [...new Set(dataset.map((row) => row.Location))].sort() });
+  if (req.method === 'GET' && url.pathname === '/api/dataset/summary') {
+    const average = (key) => Math.round(mean(dataset, key));
+    const counts = (key) => Object.entries(dataset.reduce((out, row) => (out[row[key]] = (out[row[key]] || 0) + 1, out), {})).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+    const prices = dataset.map((row) => numeric(row, 'Price')).sort((a, b) => a - b);
+    return send(res, 200, { records: dataset.length, fields: Object.keys(dataset[0] || {}), locations: [...new Set(dataset.map((row) => row.Location))].sort(), averagePrice: average('Price'), medianPrice: prices[Math.floor(prices.length / 2)] || 0, averageArea: average('Area'), averageBedrooms: Number(mean(dataset, 'Bedrooms').toFixed(1)), averageBathrooms: Number(mean(dataset, 'Bathrooms').toFixed(1)), averageYearBuilt: average('YearBuilt'), priceRange: [prices[0], prices[prices.length - 1]], byLocation: counts('Location'), byCondition: counts('Condition'), byProperty: counts('Floors'), samples: dataset.slice(0, 8).map(({ Id, Area, Bedrooms, Bathrooms, Floors, YearBuilt, Location, Condition, Garage, Price }) => ({ Id: Number(Id), Area: Number(Area), Bedrooms: Number(Bedrooms), Bathrooms: Number(Bathrooms), Floors: Number(Floors), YearBuilt: Number(YearBuilt), Location, Condition, Garage, Price: Number(Price) })) });
+  }
   if (req.method === 'POST' && url.pathname === '/api/estimate') {
     let body = '';
     req.on('data', (chunk) => { body += chunk; if (body.length > 10000) req.destroy(); });
